@@ -1,0 +1,67 @@
+---
+// src/components/CaseStudies.astro
+
+// Define the data interface (Class/Object definition)
+interface CaseStudy {
+    title: string;
+    company: string;
+    description: string;
+    focus: string;
+    companyUrl: string;
+}
+
+// Define the required input property (Encapsulation)
+interface Props {
+    studies: CaseStudy[];
+}
+
+const { studies } = Astro.props;
+---
+<section id="case-studies" 
+    class="
+        p-10 lg:px-[10%] xl:px-40 mb-5 mx-auto bg-white
+        border-t-2 border-deep-blue w-full my-5
+    "
+>
+    <h2 class="text-deep-blue text-3xl font-bold mb-8">Impactful Case Studies</h2>
+    
+    {/* Render Case Studies using map() on the passed-in data */}
+
+    {studies.map(study => (
+        <div class="
+            case-study 
+            border-l-4 border-yellow-accent
+            pl-5 mb-10
+        ">
+            <h3 class="
+                text-deep-blue text-xl font-bold 
+                mt-0 mb-2
+            ">
+                {/* Display the Title */}
+                {study.title} - 
+                
+                {study.companyUrl ? (
+                    <a href={study.companyUrl} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    
+                    class="text-deep-blue underline hover:text-yellow-accent hover:no-underline inline-block"                    
+                    >
+                        {study.company}
+                    </a>
+                ) : (
+                    // Otherwise, render just the company name
+                    <span>{study.company}</span>
+                )}
+            </h3>
+            
+            <p class="mb-3">
+                {study.description}
+            </p>
+            
+            <p class="text-gray-600 italic text-base mt-2">
+                Focus: {study.focus}
+            </p>
+        </div>
+    ))}
+</section>

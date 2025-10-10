@@ -1,0 +1,47 @@
+---
+// src/components/SkillsSection.astro
+
+// Define the data interface
+interface Props {
+    functionalSkills: string[];
+    nonFunctionalSkills: string[];
+}
+
+// Destructure the data (Encapsulation)
+const { functionalSkills, nonFunctionalSkills } = Astro.props;
+---
+<section id="skills" 
+    class="
+        flex flex-wrap justify-around gap-8 
+        p-10 lg:px-[10%] xl:px-40 mb-5 mx-auto bg-white
+        border-t-2 border-deep-blue w-full my-5
+    "
+>
+    <h2 class="w-full text-deep-blue text-3xl font-bold mb-6">Core Technical Expertise</h2>
+    
+    {/* Functional Skills Card */}
+    <div class="flex-1 min-w-[300px] p-5 border border-gray-200 rounded-lg bg-gray-50">
+        <h3 class="text-deep-blue text-xl font-bold mb-2"> ⚙️ Automation & Functional Testing</h3>
+        <ul class="list-none p-0">
+            {/* Map functional skills (Iteration) */}
+            {functionalSkills.map(skill => (
+                <li class="py-1 border-b border-dotted border-gray-200">
+                    {skill}
+                </li>
+            ))}
+        </ul>
+    </div>
+    
+    {/* Non-Functional Skills Card */}
+    <div class="flex-1 min-w-[300px] p-5 border border-gray-200 rounded-lg bg-gray-50">
+        <h3 class="text-deep-blue text-xl font-bold mb-2"> 🧠 Non-Functional & Advanced QA</h3>
+        <ul class="list-none p-0">
+             {/* Map non-functional skills (Iteration) */}
+             {nonFunctionalSkills.map(skill => (
+                <li class="py-1 border-b border-dotted border-gray-200">
+                    {skill}
+                </li>
+            ))}
+        </ul>
+    </div>
+</section>

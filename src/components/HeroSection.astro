@@ -1,0 +1,64 @@
+---
+// src/components/HeroSection.astro
+import CtaGroup from './CtaGroup.astro';
+---
+<header 
+    class="
+        text-white 
+        py-24 px-5 md:px-10 lg:px-20 xl:px-40 /* Increased vertical padding (py-24) for visual weight */
+        text-center 
+        bg-cover bg-center bg-no-repeat
+        "
+    style="
+        /* Deep Blue overlay (rgba(0, 77, 153, 0.75)) over the image */
+        background-image: linear-gradient(rgba(0, 77, 153, 0.75), rgba(0, 77, 153, 0.75)), url('/your-headshot.JPG');
+    "
+>
+    <div class="hero-content">
+        
+        {/* --- Image Styling --- */}
+        <img src="/your-headshot.JPG" alt="Bolujo Excellent Headshot" 
+            class="
+                w-40 h-40 md:w-48 md:h-48 /* Increased image size responsively */
+                rounded-full object-cover 
+                border-4 border-yellow-accent 
+                mx-auto mb-6 md:mb-8 /* Adjusted vertical spacing */
+            "
+        >
+        
+        {/* --- Main Name Heading (Largest, Boldest) --- */}
+        <h1 class="
+            /* Replaces .main-name */
+            text-white text-5xl sm:text-6xl font-bold
+            mb-1 mt-0 leading-tight
+        ">
+            Bolujo Excellent
+        </h1>
+        
+        {/* --- Slogan/Title Heading (Yellow Accent) --- */}
+        <h1 class="
+            text-yellow-accent 
+            text-2xl md:text-3xl font-bold 
+            mb-6 mt-2 /* Spacing below the slogan */
+        ">
+            Quality Engineering Leader + Entrepreneur<br>
+            <i class="font-normal italic">Innovating at the Intersection of Tech and Business</i>
+        </h1>
+        
+        {/* --- Summary Paragraph Styling --- */}
+        <p class="
+            summary 
+            text-lg md:text-xl font-light /* Adjusted font size for readability */
+            max-w-4xl mx-auto mb-10 /* Centered with max width, large bottom margin */
+        ">
+            A seasoned Quality Assurance Specialist with an extensive background in the software industry, boasting a proven track record of delivering impactful solutions across diverse sectors such as 
+            <i class="text-yellow-accent">Financial Services</i>, 
+            <i class="text-yellow-accent">Edutech</i>, 
+            <i class="text-yellow-accent">Cryptocurrency</i>, 
+            <i class="text-yellow-accent">Gaming</i>, and 
+            <i class="text-yellow-accent">Logistics</i>. Specializing in user-centric solutions that drive breakthrough efficiency through Functional and Non-Functional Test Automation.
+        </p>
+        
+        <CtaGroup /> 
+    </div>
+</header>

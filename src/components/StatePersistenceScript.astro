@@ -1,0 +1,72 @@
+---
+---
+<script is:inline>
+    // Utility functions for saving and loading state using Local Storage
+
+    /**
+     * Saves a key-value pair to Local Storage.
+     * @param {string} key - The key under which to store the data.
+     * @param {any} value - The data to store (will be JSON stringified).
+     */
+    function saveState(key, value) {
+        try {
+            const serializedState = JSON.stringify(value);
+            localStorage.setItem(key, serializedState);
+            // console.log(`State saved for key: ${key}`);
+        } catch (error) {
+            console.error("Error saving state to Local Storage:", error);
+        }
+    }
+
+    /**
+     * Loads a value from Local Storage by key.
+     * @param {string} key - The key to retrieve the data from.
+     * @returns {any | undefined} The parsed data or undefined if not found/error.
+     */
+    function loadState(key) {
+        try {
+            const serializedState = localStorage.getItem(key);
+            if (serializedState === null) {
+                return undefined;
+            }
+            return JSON.parse(serializedState);
+        } catch (error) {
+            console.error("Error loading state from Local Storage:", error);
+            return undefined;
+        }
+    }
+
+    // Example Usage: Retaining the last section viewed on the index page
+    const LAST_SECTION_KEY = 'bolujo_last_section';
+    const mainContent = document.querySelector('main'); // Use a main container or body
+
+    // 1. Load: Check if a last section was saved and scroll to it on page load
+    const lastSectionId = loadState(LAST_SECTION_KEY);
+    if (lastSectionId) {
+        const targetElement = document.getElementById(lastSectionId);
+        // Use a slight delay to ensure View Transitions has completed the DOM swap
+        if (targetElement) {
+             window.requestAnimationFrame(() => {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+             });
+        }
+    }
+
+
+    // 2. Save: Save the currently viewed section before navigating away (optional but useful)
+    // You would typically attach this to a specific event or element (like the portfolio links)
+    // For this site, we can save the target anchor when a Technical Portfolio link is clicked.
+    
+    document.querySelectorAll('.artifact-list a').forEach(link => {
+        link.addEventListener('click', () => {
+             // When a user leaves the index page via a portfolio link, save the scroll position/section
+             // In this simple case, we don't need to save the section, as View Transitions is supposed to handle scroll retention.
+             // If we needed to save a theme or filter state, this is where we would call saveState().
+        });
+    });
+
+    // Make functions globally available if needed by other components
+    window.saveState = saveState;
+    window.loadState = loadState;
+
+</script>

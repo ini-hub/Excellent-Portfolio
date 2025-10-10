@@ -1,0 +1,30 @@
+---
+import Layout from '../components/Layout.astro';
+
+const title = 'Documentation & Process Details | Bolujo Excellent';
+---
+
+<Layout {title}>
+    <main class="docs-details-container">
+        <section id="documentation-details" class="section details-page">
+            <h2>Documentation & Process Standards 📝</h2>
+            <p>This section provides insight into my structured approach to Test Design, Risk Analysis, and BDD principles to ensure transparency and align technical work with business requirements.</p>
+            
+            <div class="detail-artifacts">
+                <h3>Test Design & Execution (BDD)</h3>
+                <p>A sample of detailed BDD test cases (Gherkin format) and traceability links to defects/requirements, managed via TestQuality or Azure board.</p>
+                <a href="[LINK TO TEST CASE SAMPLE]" target="_blank" class="button primary">View Test Case Sample</a>
+
+                <h3>Risk Analysis & Strategy</h3>
+                <p>A document outlining a formal risk analysis and mitigation strategy for a product launch, demonstrating alignment with the CTFL ISTQB framework.</p>
+                <a href="[LINK TO RISK DOC]" target="_blank" class="button primary">View Risk Document</a>
+                
+                <h3>Test Report Example</h3>
+                <p>A final project test summary report, covering bug metrics, overall quality metrics, and release recommendations to stakeholders.</p>
+                <a href="[LINK TO SAMPLE REPORT]" target="_blank" class="button primary">View Final Test Report</a>
+            </div>
+            
+            <a href="/#technical-portfolio" class="back-link">← Back to Technical Portfolio</a>
+        </section>
+    </main>
+</Layout>

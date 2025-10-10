@@ -1,0 +1,73 @@
+---
+---
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Elements must be retrieved after DOMContentLoaded
+        const modal = document.getElementById('js-lightbox-modal');
+        const modalImage = document.getElementById('js-lightbox-image') as HTMLImageElement | null;
+        const closeButton = document.getElementById('js-lightbox-close');
+        
+        // Function to open the modal (Controlled by JavaScript)
+        function openModal(src: string, alt: string) {
+            if (modal && modalImage) {
+                modalImage.src = src;
+                modalImage.alt = alt;
+                
+                // Show modal by removing 'hidden' and toggling visibility classes
+                modal.removeAttribute('hidden');
+                modal.classList.remove('opacity-0', 'invisible');
+                modal.classList.add('opacity-100', 'visible');
+                
+                document.body.style.overflow = 'hidden'; // Lock scrolling
+            }
+        }
+
+        // Function to close the modal (Controlled by JavaScript)
+        function closeModal() {
+            if (modal) {
+                // Hide modal by toggling visibility classes and setting 'hidden'
+                modal.classList.remove('opacity-100', 'visible');
+                modal.classList.add('opacity-0', 'invisible');
+                
+                // Use a short delay before setting 'hidden' to allow transition to complete
+                setTimeout(() => {
+                    modal.setAttribute('hidden', 'true'); 
+                    document.body.style.overflow = ''; // Restore scrolling
+                }, 300); // 300ms matches the transition duration
+            }
+        }
+
+        // Attach click listeners to all gallery images (Opening)
+        document.querySelectorAll('.gallery-trigger').forEach(link => {
+            link.addEventListener('click', (e) => {
+                // Prevent navigation to '#'
+                e.preventDefault(); 
+                
+                const src = link.getAttribute('data-img-src');
+                const alt = link.getAttribute('data-img-alt');
+                const caption = link.getAttribute('data-img-caption')
+                
+                if (src) {
+                    openModal(src, alt || '');
+                }
+            });
+        });
+
+        // Attach close listener to the 'X' button (Closing)
+        if (closeButton) {
+            closeButton.addEventListener('click', (e) => {
+                e.preventDefault(); // Important: Prevents navigation to href="#"
+                closeModal();
+            });
+        }
+        
+        // Close on backdrop click
+        if (modal) {
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+        }
+    });
+</script>

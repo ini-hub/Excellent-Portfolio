@@ -1,0 +1,43 @@
+---
+// src/components/TechnicalPortfolio.astro
+
+// Define the data interface (Class/Object definition)
+interface PortfolioLink {
+    href: string;
+    title: string;
+    description: string;
+}
+
+// Define the required input property (Encapsulation)
+interface Props {
+    links: PortfolioLink[];
+}
+
+const { links } = Astro.props;
+---
+<section id="technical-portfolio" 
+    class="
+        p-10 lg:px-[10%] xl:px-40 mb-5 mx-auto bg-white
+        border-t-2 border-deep-blue w-full my-5
+    "
+>
+    <h2 class="text-deep-blue text-3xl font-bold mb-4">Technical Portfolio: Proof of Process 🛠️</h2>
+    <p class="mb-6">Explore tangible artifacts of my Quality Engineering process, including automation scripts, performance reports, and framework designs across various domains.</p>
+    
+    <ul class="list-none p-0">
+        {/* Render Portfolio Links using map() on the passed-in data (Iteration/Polymorphism) */}
+        {links.map((link, index) => (
+            <li class={`
+                py-4 transition duration-300 hover:bg-gray-50 
+                ${index < links.length - 1 ? 'border-b border-gray-200' : ''}
+            `}>
+                <a href={link.href} class="block text-xl font-semibold text-deep-blue mb-1 hover:underline hover:text-yellow-accent">
+                    {link.title}
+                </a>
+                <p class="text-sm text-gray-600 pl-1 mt-0">
+                    {link.description}
+                </p>
+            </li>
+        ))}
+    </ul>
+</section>

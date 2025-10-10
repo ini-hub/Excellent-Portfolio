@@ -1,0 +1,30 @@
+---
+import Layout from '../components/Layout.astro';
+
+const title = 'API Testing Details | Bolujo Excellent';
+---
+
+<Layout {title}>
+    <main class="api-details-container">
+        <section id="api-testing-details" class="section details-page">
+            <h2>API Testing Portfolio: Postman & Backend Validation 🔗</h2>
+            <p>This section details robust API testing strategies, focusing on validation of business logic, data integrity, security, and integration points (e.g., Kafka/Spanner/MySQL).</p>
+            
+            <div class="detail-artifacts">
+                <h3>Postman Collection</h3>
+                <p>A public or sanitized collection showcasing automated tests, environment variables, and pre-request scripts for payment gateway APIs.</p>
+                <a href="[LINK TO POSTMAN COLLECTION]" target="_blank" class="button primary">View Postman Collection</a>
+
+                <h3>Backend Validation Script</h3>
+                <p>An example demonstrating verification of API response data against database entries (Spanner/MySQL) to ensure data consistency.</p>
+                <a href="[LINK TO BACKEND SCRIPT]" target="_blank" class="button primary">View Validation Script</a>
+                
+                <h3>API Contract Testing</h3>
+                <p>Overview of how API schema and contract testing were implemented using Swagger/OpenAPI specifications to prevent integration failures.</p>
+                <a href="[LINK TO CONTRACT OVERVIEW]" target="_blank" class="button primary">View Contract Testing Process</a>
+            </div>
+            
+            <a href="/#technical-portfolio" class="back-link">← Back to Technical Portfolio</a>
+        </section>
+    </main>
+</Layout>

@@ -1,0 +1,52 @@
+---
+import Layout from '../components/Layout.astro';
+import Footer from '../components/Footer.astro';
+import PhotoGallery from '../components/PhotoGallery.astro';
+import TechnicalPortfolio from '../components/TechnicalPortfolio.astro';
+import CaseStudies from '../components/CaseStudies.astro';
+import AboutSection from '../components/AboutSection.astro';
+import SkillsSection from '../components/SkillsSection.astro';
+import HeroSection from '../components/HeroSection.astro';
+import ModalScript from '../components/ModalScript.astro'; 
+
+import {
+    recognitionImages,
+    galleryImages, 
+    functionalSkills, 
+    nonFunctionalSkills, 
+    portfolioLinks, 
+    caseStudies 
+} from '../data'; 
+
+const title = 'Bolujo Excellent | QA Engineer & Entrepreneur';
+---
+
+<Layout {title}>
+    <HeroSection />
+    <AboutSection items={recognitionImages} /> 
+    <SkillsSection 
+        functionalSkills={functionalSkills}
+        nonFunctionalSkills={nonFunctionalSkills}
+    />
+    <CaseStudies studies={caseStudies} />
+    <TechnicalPortfolio links={portfolioLinks} />
+    <PhotoGallery items={galleryImages} />
+    <Footer />
+
+    <ModalScript /> 
+
+    <div id="js-lightbox-modal" class="
+        fixed top-0 left-0 w-full h-full 
+        bg-black/90 flex items-center justify-center 
+        z-[9999] opacity-0 invisible transition-opacity duration-300
+        " 
+        hidden
+    >
+        <a href="#" id="js-lightbox-close" 
+            class="absolute top-5 right-8 text-white text-5xl font-bold no-underline hover:text-yellow-accent" [cite: 28]
+        >&times;</a>
+        
+        <img id="js-lightbox-image" src="" alt="" class="max-w-[90%] max-h-[90%] object-contain"> [cite: 27]
+    </div>
+
+</Layout>

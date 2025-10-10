@@ -1,0 +1,19 @@
+---
+import Lightbox from './Lightbox.astro';
+import type { LightboxData } from '../types'; // <-- IMPORT THE SHARED TYPE
+
+interface Props {
+    data: LightboxData[]; 
+}
+
+const { data } = Astro.props;
+---
+{/* ... rendering logic remains the same ... */}
+
+{data.map(item => (
+    <Lightbox 
+        id={item.id} 
+        imgPath={item.imgPath} 
+        altText={item.altText} 
+    />
+))}
