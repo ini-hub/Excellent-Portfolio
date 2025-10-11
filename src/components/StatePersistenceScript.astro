@@ -46,9 +46,9 @@
         const targetElement = document.getElementById(lastSectionId);
         // Use a slight delay to ensure View Transitions has completed the DOM swap
         if (targetElement) {
-             window.requestAnimationFrame(() => {
+            window.requestAnimationFrame(() => {
                 targetElement.scrollIntoView({ behavior: 'smooth' });
-             });
+            });
         }
     }
 
