@@ -1,0 +1,151 @@
+---
+// src/components/ServicesScreen.astro
+
+// Define the content data directly within the component's script block
+// for a single-page presentation.
+
+const technicalServices = [
+    {
+        title: "Test Automation Frameworks",
+        offerings: "Design and implement robust, scalable, and maintainable automation solutions using <b>Playwright</b>, <b>Selenium</b>, and <b>Appium</b> (Web, API, Mobile).",
+        impact: "Reduces time-to-market, lowers manual testing costs, and provides immediate feedback in CI/CD pipelines."
+    },
+    {
+        title: "Performance & Load Testing",
+        offerings: "Develop and execute stress, load, and scalability tests using <b>JMeter</b> and cloud-based tools (e.g., BlazeMeter) to identify bottlenecks.",
+        impact: "Ensures systems remain stable and performant under peak production traffic and prevents critical outages."
+    },
+    {
+        title: "API & Backend Validation",
+        offerings: "Expert validation of microservices and complex APIs using <b>RestAssured</b> and <b>Postman</b>. Includes contract testing and database validation (Spanner, MySQL) for data integrity.",
+        impact: "Guarantees business logic is flawless at the service layer, preventing defects from reaching the UI."
+    },
+    {
+        title: "CI/CD Integration",
+        offerings: "Integrating quality gates into deployment pipelines using tools like <b>GitHub Actions</b> and <b>Jenkins</b> to enforce quality standards automatically.",
+        impact: "Establishes a seamless, reliable path to production with zero human intervention for quality checks."
+    }
+];
+
+const leadershipServices = [
+    {
+        title: "QA Strategy & Transformation",
+        offerings: "Defining a long-term quality vision, shifting culture from fault-finding to fault-prevention (<b>Shift-Left</b>), and establishing governance.",
+        impact: "Delivers higher overall product quality and reduces technical debt over time."
+    },
+    {
+        title: "Test Design & Documentation",
+        offerings: "Implementing <b>Behavior-Driven Development (BDD)</b> principles (Gherkin) for clear, stakeholder-friendly requirements and test cases.",
+        impact: "Improves transparency, simplifies collaboration between technical and business teams, and ensures feature traceability."
+    },
+    {
+        title: "Team Mentorship & Growth",
+        offerings: "Hiring, coaching, and mentoring QA and Engineering teams to foster a culture of ownership, continuous learning, and high performance.",
+        impact: "Increases team productivity, reduces attrition, and builds internal expertise in complex quality domains."
+    },
+    {
+        title: "Risk Management & Reporting",
+        offerings: "Conducting formal risk analysis, developing mitigation strategies, and delivering clear, actionable quality metrics and reports to executive stakeholders.",
+        impact: "Enables data-driven decisions on release readiness and ensures resources are focused on the highest-risk areas."
+    }
+];
+---
+
+<div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 text-white">
+    
+    <header class="text-center mb-16">
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-yellow-accent mb-4">
+            Full-Spectrum Quality & Engineering Leadership
+        </h1>
+        <p class="text-xl text-gray-700  max-w-4xl mx-auto">
+            I offer a unique blend of <b>hands-on technical expertise (QA Engineering)</b> and <b>strategic leadership (Engineering Management)</b> to not only deliver quality products but also build high-performing, resilient engineering teams.
+        </p>
+    </header>
+
+    
+    <section class="mb-16">
+        <h2 class="text-3xl sm:text-4xl font-bold text-deep-blue mb-8 border-b-4 border-yellow-accent pb-2">
+            1. Core Technical Services <span class="text-yellow-accent">| QA Engineering 💻</span>
+        </h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {technicalServices.map((service) => (
+                <div class="bg-gray-800 p-6 rounded-lg shadow-xl border-l-4 border-yellow-accent space-y-3">
+                    <h3 class="text-xl font-bold text-yellow-accent">{service.title}</h3>
+                    <p class="text-gray-200">
+                        <span class="font-semibold block mb-1">Offerings:</span>
+                        <Fragment set:html={service.offerings} />
+                    </p>
+                    <p class="text-gray-400 text-sm">
+                        <span class="font-semibold text-yellow-accent">Impact:</span> 
+                        {service.impact}
+                    </p>
+                </div>
+            ))}
+        </div>
+    </section>
+
+    ---
+
+    <section class="mb-20">
+        <h2 class="text-3xl sm:text-4xl font-bold text-deep-blue mb-8 border-b-4 border-yellow-accent pb-2">
+            2. Engineering Leadership & Process <span class="text-yellow-accent">| Management 🧠</span>
+        </h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {leadershipServices.map((service) => (
+                <div class="bg-gray-800 p-6 rounded-lg shadow-xl border-l-4 border-yellow-accent space-y-3">
+                    <h3 class="text-xl font-bold text-yellow-accent">{service.title}</h3>
+                    <p class="text-gray-200">
+                        <span class="font-semibold block mb-1">Offerings:</span>
+                        <Fragment set:html={service.offerings} />
+                    </p>
+                    <p class="text-gray-400 text-sm">
+                        <span class="font-semibold text-yellow-accent">Impact:</span> 
+                        {service.impact}
+                    </p>
+                </div>
+            ))}
+        </div>
+    </section>
+
+    
+    <div class="text-center">
+        <h3 class="text-3xl font-extrabold mb-6 text-deep-blue">
+            Ready to elevate your product quality and team efficiency?
+        </h3>
+
+        <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
+            
+            <a 
+                href="https://www.linkedin.com/in/bolujo-excellent" 
+                class="
+                    w-full sm:w-auto
+                    inline-block px-8 py-3 rounded-lg 
+                    font-bold text-lg text-center tracking-wide
+                    bg-yellow-accent text-deep-blue border-none 
+                    transition duration-300
+                    hover:bg-[#e6b800] hover:no-underline
+                "
+            >
+                Start a Project Conversation
+            </a>
+            
+            <a 
+                href="/BOLUJO EXCELLENT CV.pdf" target="_blank" 
+                class="
+                    w-full sm:w-auto
+                    inline-block px-8 py-3 rounded-lg 
+                    font-bold text-lg text-center tracking-wide
+                    bg-yellow-accent text-deep-blue border-none 
+                    transition duration-300
+                    hover:bg-[#e6b800] hover:no-underline
+                "
+            >
+                Download Full CV
+            </a>
+            
+        </div>
+    </div>
+    
+</div>
