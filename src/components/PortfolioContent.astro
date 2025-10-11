@@ -1,0 +1,96 @@
+---
+import ContactAction from './ContactAction.astro';
+
+// src/components/PortfolioContent.astro
+// Define the expected properties (props) for the component
+interface Props {
+    title: string;
+    introduction: string;
+    sectionTitle: string;
+    sectionContent: string;
+    techStack: string[];
+    projectUrl?: string; 
+    imageUrl?: string; 
+}
+
+const { 
+    title, 
+    introduction, 
+    sectionTitle, 
+    sectionContent, 
+    techStack,
+    projectUrl,
+    imageUrl 
+} = Astro.props;
+
+// Define a consistent height for your images, e.g., 'h-80' (320px) or 'h-96' (384px)
+// You can make this configurable via props if you want different heights per project
+const imageHeightClass = "h-96"; // Choose your desired consistent height
+---
+
+<div class="text-white"> {/* Removed max-w-7xl and mx-auto from here */}
+    
+    <header class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-3xl sm:text-5xl font-extrabold text-yellow-accent mb-4">
+            {title}
+        </h1>
+        <p class="text-lg text-gray-900 max-w-3xl mx-auto">
+            {introduction}
+        </p>
+    </header>
+    
+    {/* Full-width image section */}
+    {imageUrl && (
+        <section class={`w-full overflow-hidden bg-gray-900 flex justify-center items-center ${imageHeightClass}`}>
+            <img 
+                src={imageUrl} 
+                alt={`${title} Project Screenshot`} 
+                class="w-full h-full object-cover object-center" 
+            />
+        </section>
+    )}
+
+    {/* Main content, now constrained by max-width */}
+    <section class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-3 gap-10">
+        
+        <div class="lg:col-span-1 bg-gray-800 p-6 rounded-lg shadow-xl h-fit">
+            <h2 class="text-2xl font-bold mb-4 border-b border-gray-600 pb-2">
+                Project Details
+            </h2>
+            
+            <p class="mb-4">
+                <span class="font-semibold text-yellow-accent">Status:</span> Completed
+            </p>
+
+            {projectUrl && (
+                <p class="mb-6">
+                    <span class="font-semibold text-yellow-accent">Live Demo/Repo:</span> 
+                    <a href={projectUrl} target="_blank" class="block text-blue-400 hover:text-blue-300 transition duration-150 underline">
+                        {projectUrl}
+                    </a>
+                </p>
+            )}
+
+            <h3 class="text-xl font-bold mb-3 text-yellow-accent">
+                Tech Stack
+            </h3>
+            <div class="flex flex-wrap gap-2">
+                {techStack.map((tech) => (
+                    <span class="bg-deep-blue text-sm font-medium px-3 py-1 rounded-full shadow-md">
+                        {tech}
+                    </span>
+                ))}
+            </div>
+        </div>
+        
+        <div class="lg:col-span-2 space-y-6">
+            <h2 class="text-3xl font-bold text-yellow-accent">
+                {sectionTitle}
+            </h2>
+            <div class="text-gray-900 leading-relaxed space-y-4">
+                <p>{sectionContent}</p> 
+            </div>
+        </div>
+        <ContactAction/>
+    </section>
+</div>

@@ -1,30 +1,21 @@
 ---
-import Layout from '../components/Layout.astro';
+// src/pages/performance-testing.astro
 
-const title = 'Performance Testing Details | Bolujo Excellent';
+import Layout from '../components/Layout.astro';
+import PortfolioContent from '../components/PortfolioContent.astro';
+
+// Define the unique content for the Performance Testing project
+const performanceTestingData = {
+    title: "Performance Testing Portfolio: JMeter & Load Analysis ⚡", 
+    introduction: "This section highlights expertise in assessing system scalability and stability under stress, using **JMeter** to simulate realistic user load and identify bottlenecks. The artifacts below demonstrate practical application and detailed analysis.",
+    sectionTitle: "Key Artifacts and Deliverables",
+    sectionContent: "The goal was to transition from manual regression testing to a fully automated CI/CD pipeline. I designed a page object model architecture, utilizing both Selenium with Java and Playwright with TypeScript to cover different client needs, focusing on high reliability and maintainability.",
+    projectUrl: "https://github.com/your-repo-link/web-automation-project",
+    imageUrl: "../public/me-at-dtec.jpg",
+    techStack: ["JMeter", "LoadRunner", "Grafana", "BlazeMeter", "AWS/Azure Cloud"]
+};
 ---
 
-<Layout {title}>
-    <main class="performance-details-container">
-        <section id="performance-details" class="section details-page">
-            <h2>Performance Testing Portfolio: JMeter & Load Analysis ⚡</h2>
-            <p>This section highlights expertise in assessing system scalability and stability under stress, using JMeter to simulate realistic user load and identify bottlenecks.</p>
-            
-            <div class="detail-artifacts">
-                <h3>JMeter Test Plan</h3>
-                <p>A test plan example demonstrating complex thread group setups, ramp-up schedules, and parameterization for user load simulation.</p>
-                <a href="/Simplaa Test Plan.jmx" target="_blank" class="button primary">Download JMeter Test Plan (.jmx)</a>
-
-                <h3>Performance Test Report</h3>
-                <p>A detailed report analyzing key metrics (latency, throughput, error rate) under peak load conditions for a critical service (e.g., ride-hailing matching).</p>
-                <a href="/SIMPLAA LOAD TEST RESULT.pdf" target="_blank" class="button primary">View Sample Report</a>
-                
-                <h3>Load Scenario Planning</h3>
-                <p>Documentation on how load scenarios were designed based on expected user traffic and business requirements.</p>
-                <a href="[LINK TO SCENARIO DOC]" target="_blank" class="button primary">View Scenario Document</a>
-            </div>
-            
-            <a href="/#technical-portfolio" class="back-link">← Back to Technical Portfolio</a>
-        </section>
-    </main>
+<Layout title={performanceTestingData.title}>
+    <PortfolioContent {...performanceTestingData} />
 </Layout>

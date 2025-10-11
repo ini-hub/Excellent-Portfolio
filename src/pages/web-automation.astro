@@ -1,30 +1,20 @@
 ---
-import Layout from '../components/Layout.astro';
+// src/pages/web-automation.astro
+import Layout from '../components/Layout.astro'; // Corrected Path
+import PortfolioContent from '../components/PortfolioContent.astro';
 
-const title = 'Web Automation Details | Bolujo Excellent';
+// Define the unique content for the Web Automation project
+const webAutomationData = {
+    title: "Web Automation with Selenium & Playwright",
+    introduction: "An in-depth look at how I built robust, cross-browser automation frameworks to ensure continuous quality.",
+    sectionTitle: "Project Goal and Methodology",
+    sectionContent: "The goal was to transition from manual regression testing to a fully automated CI/CD pipeline. I designed a page object model architecture, utilizing both Selenium with Java and Playwright with TypeScript to cover different client needs, focusing on high reliability and maintainability.",
+    techStack: ["Selenium", "Playwright", "Java", "TypeScript", "Maven", "GitHub Actions"],
+    projectUrl: "https://github.com/your-repo-link/web-automation-project",
+    imageUrl: "/me-at-DTEC.JPG",
+};
 ---
 
-<Layout {title}>
-    <main class="web-details-container">
-        <section id="web-automation-details" class="section details-page">
-            <h2>Web Automation Portfolio: Cypress & CI/CD 💻</h2>
-            <p>This section showcases the frameworks, scripts, and reporting mechanisms used for continuous quality assurance on web applications, demonstrating proficiency in scalable, modern testing practices.</p>
-            
-            <div class="detail-artifacts">
-                <h3>GitHub Repository (Cypress Framework)</h3>
-                <p>A scalable framework containing end-to-end Cypress tests for diverse web applications. Uses TypeScript/JavaScript and integrates Gherkin/BDD principles.</p>
-                <a href="[YOUR GITHUB LINK HERE]" target="_blank" class="button primary">View Framework on GitHub</a>
-
-                <h3>CI/CD Integrated Report</h3>
-                <p>A sample of an integrated Allure or Cucumber test report from a typical pipeline run, demonstrating clear, actionable results.</p>
-                <a href="[LINK TO SAMPLE REPORT]" target="_blank" class="button primary">View Sample Report</a>
-                
-                <h3>Script Snippet Showcase</h3>
-                <p>A specific example demonstrating custom Cypress commands and reliable element selectors for complex user flows.</p>
-                <a href="[LINK TO CODE SNIPPET]" target="_blank" class="button primary">View Code Snippet</a>
-            </div>
-            
-            <a href="/#technical-portfolio" class="back-link">← Back to Technical Portfolio</a>
-        </section>
-    </main>
+<Layout title={webAutomationData.title}>
+    <PortfolioContent {...webAutomationData} />
 </Layout>
