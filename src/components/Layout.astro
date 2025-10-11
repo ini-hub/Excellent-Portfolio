@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import Footer from './Footer.astro';
+import HorizontalNav from './HorizontalNav.astro'; // <--- NEW IMPORT
 import StatePersistenceScript from './StatePersistenceScript.astro';
 
 interface Props {
@@ -22,6 +23,7 @@ const { title } = Astro.props;
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700&display=swap" rel="stylesheet">  
 </head>
 <body>
+    <HorizontalNav />
     <slot />
     
     {Astro.url.pathname !== '/' && <Footer />}

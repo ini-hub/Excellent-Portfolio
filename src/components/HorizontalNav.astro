@@ -1,0 +1,131 @@
+---
+// src/components/HorizontalNav.astro
+// Finalized Component for Sticky, Responsive Navigation
+---
+<nav 
+    class="
+        /* Sticky positioning and full width */
+        sticky top-0 w-full 
+        bg-deep-blue text-white z-50
+        
+        /* Internal Padding and Layout */
+        py-4 px-5 sm:px-10 md:px-20 lg:px-40 
+        
+        /* Main flex container: Ensures all children are spaced out */
+        flex justify-between items-center
+    "
+>
+    
+    {/* --- LEFT CONTAINER: BRANDING & NAME --- */}
+    <div class="flex items-center">
+        
+        {/* Name (Visible only on XL screens) */}
+        <div class="
+            hidden xl:flex 
+            items-center 
+        ">
+            <div class="group/branding relative h-full flex flex-col justify-center">
+                <img 
+                src="/EB.png" 
+                alt="EB Logo Icon"
+                class="h-10 w-auto cursor-pointer"
+                />
+                
+                {/* Contact Info Container (Hidden/Absolute on hover) */}
+                <div class="
+                    absolute top-full left-0 mt-1 p-2 bg-gray-700 
+                    rounded shadow-lg opacity-0 invisible 
+                    group-hover/branding:opacity-100 group-hover/branding:visible 
+                    transition duration-300 z-50 min-w-max
+                ">
+                    <p class="text-sm text-gray-300 whitespace-nowrap">Email: <a href="mailto:ebolujo101@gmail0.com" class="hover:text-yellow-accent">ebolujo101@gmail.com</a></p>
+                    <p class="text-sm text-gray-300 whitespace-nowrap">Mobile: <a href="tel:+2348138303956" class="hover:text-yellow-accent">+234 813 830 3956</a></p>
+                </div>
+            </div>
+        </div>
+        
+        {/* HAMBURGER ICON (Mobile/Tablet - Appears on the left side, but toggles the right menu) */}
+        <div class="lg:hidden">
+            <button id="menu-button" class="text-yellow-accent text-2xl hover:text-white transition duration-300">
+                ☰
+            </button>
+        </div>
+    </div>
+
+
+    {/* --- RIGHT CONTAINER: NAVIGATION LINKS --- */}
+    <ul id="main-menu" 
+        class="
+            /* Desktop Layout */
+            hidden lg:flex 
+            flex-col lg:flex-row 
+            justify-end items-center 
+            lg:space-x-8 xl:space-x-12 
+            
+            /* Mobile Positioning */
+            absolute top-full left-0 w-full h-screen bg-deep-blue/95 p-6 lg:relative lg:h-auto lg:p-0 
+            space-y-3 lg:space-y-0
+            
+            text-base font-semibold
+        ">
+        {/* Simple Links */}
+        <li><a href="/#" class="block py-2 lg:py-0 hover:text-yellow-accent transition whitespace-nowrap">Home</a></li>
+        <li><a href="/#case-studies" class="block py-2 lg:py-0 hover:text-yellow-accent transition whitespace-nowrap">Key Projects</a></li>
+        <li><a href="/#skills" class="block py-2 lg:py-0 hover:text-yellow-accent transition whitespace-nowrap">My Services</a></li>
+        <li><a href="mailto:ebolujo101@gmail.com" class="block py-2 lg:py-0 hover:text-yellow-accent transition whitespace-nowrap">Contact</a></li> 
+
+        {/* Technical Portfolio Dropdown (Hover) */} 
+        <li class="group/portfolio relative whitespace-nowrap py-2 lg:py-0">
+            <span class="cursor-default flex items-center">
+                Technical Portfolio <span class="ml-1 text-sm">▼</span>
+            </span>
+            
+            {/* Dropdown Menu */} 
+            <ul class="absolute top-full right-0 mt-0.5 bg-gray-700 p-3 rounded shadow-xl min-w-max opacity-0 invisible group-hover/portfolio:opacity-100 group-hover/portfolio:visible transition duration-300 z-50"> 
+                <li><a href="/web-automation" class="block py-1 text-sm hover:text-yellow-accent">Web Automation</a></li> 
+                <li><a href="/mobile-automation" class="block py-1 text-sm hover:text-yellow-accent">Mobile Automation</a></li> 
+                <li><a href="/api-testing" class="block py-1 text-sm hover:text-yellow-accent">API Testing</a></li> 
+                <li><a href="/performance-testing" class="block py-1 text-sm hover:text-yellow-accent">Performance Testing</a></li> 
+                <li><a href="/documentation" class="block py-1 text-sm hover:text-yellow-accent">Documentation & Process</a></li> 
+            </ul> 
+        </li> 
+    </ul>
+</nav>
+
+<script>
+    // Minimal JavaScript to toggle the mobile menu state AND the button icon
+    const menuButton = document.getElementById('menu-button');
+    const mainMenu = document.getElementById('main-menu');
+
+    if (menuButton && mainMenu) {
+        // Function to toggle the menu open/closed
+        function toggleMenu() {
+            const isHidden = mainMenu.classList.contains('hidden');
+            
+            if (isHidden) {
+                // OPEN MENU: Show Menu and change icon to 'X'
+                mainMenu.classList.remove('hidden');
+                mainMenu.classList.add('');
+                menuButton.innerHTML = '&times;'; // Change to Close icon (X)
+            } else {
+                // CLOSE MENU: Hide Menu and change icon back to Hamburger
+                mainMenu.classList.remove('flex');
+                mainMenu.classList.add('hidden');
+                menuButton.innerHTML = '&#9776;'; // Change back to Hamburger (☰)
+            }
+        }
+
+        // Attach event listeners
+        menuButton.addEventListener('click', toggleMenu);
+        
+        // Add listener to links to close menu after navigation (on anchor click)
+        mainMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                // Only hide on mobile screens
+                if (window.innerWidth < 1024) { 
+                    toggleMenu();
+                }
+            });
+        });
+    }
+</script>
