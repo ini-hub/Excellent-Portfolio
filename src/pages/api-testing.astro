@@ -3,6 +3,98 @@
 import Layout from '../components/Layout.astro';
 import PortfolioContent from '../components/PortfolioContent.astro';
 
+
+const apiAutomationVisuals = [
+    {
+        title: "Postman",
+        id: "postman",
+        images: [
+            {
+                src: "/POSTMAN/Postman - 405 - Method Not Allowed.PNG",
+                caption: "File structure demonstrating clear separation of Page Objects, Tests, and Utilities.",
+            },
+            {
+                src: "/POSTMAN/Postman - Cannot Signup - 400 Bad request.PNG",
+                caption: "File structure demonstrating clear separation of Page Objects, Tests, and Utilities.",
+            },
+            {
+                src: "/POSTMAN/Postman - Post Response Script.PNG",
+                caption: "File structure demonstrating clear separation of Page Objects, Tests, and Utilities.",
+            },
+            {
+                src: "/POSTMAN/Postman - Remove Moniepoint - 404 - Not found Get Invalid.PNG",
+                caption: "File structure demonstrating clear separation of Page Objects, Tests, and Utilities.",
+            },
+            {
+                src: "/POSTMAN/Postman - Remove Moniepoint - 500 - Internal Server Error Delete invalid.PNG",
+                caption: "File structure demonstrating clear separation of Page Objects, Tests, and Utilities.",
+            },
+            {
+                src: "/POSTMAN/Postman - Remove Monnify - 400 - Bad request Algorithm Required.PNG",
+                caption: "File structure demonstrating clear separation of Page Objects, Tests, and Utilities.",
+            },
+            {
+                src: "/POSTMAN/Postman - Remove Monnify - 400 - Bad request Provider Required.PNG",
+                caption: "File structure demonstrating clear separation of Page Objects, Tests, and Utilities.",
+            },
+            {
+                src: "/POSTMAN/Postman - Remove Monnify - 400 - Bad request Threshold Required.PNG",
+                caption: "File structure demonstrating clear separation of Page Objects, Tests, and Utilities.",
+            },
+            {
+                src: "/POSTMAN/Postman - Remove Monnify - 400 - Bad request Threshold<=1.0.PNG",
+                caption: "File structure demonstrating clear separation of Page Objects, Tests, and Utilities.",
+            },
+            {
+                src: "/POSTMAN/Postman - Remove Monnify - 400 - Bad request Threshold>0.0.PNG",
+                caption: "File structure demonstrating clear separation of Page Objects, Tests, and Utilities.",
+            },
+            {
+                src: "/POSTMAN/Postman - Screening Reserved Name.PNG",
+                caption: "File structure demonstrating clear separation of Page Objects, Tests, and Utilities.",
+            },
+            {
+                src: "/POSTMAN/Postman - Webhook processing failed - 500 Internal Server Error.PNG",
+                caption: "File structure demonstrating clear separation of Page Objects, Tests, and Utilities.",
+            },
+        ]
+    },
+    {
+        title: "Kafka",
+        id: "kafka",
+        images: [
+            {
+                src: "/KAFKA/KAFKA - BVN 1.PNG",
+                caption: "Allure Report dashboard showing 98% pass rate across 200+ tests on CI/CD.",
+                link: ""
+            },
+            {
+                src: "/KAFKA/KAFKA - BVN.PNG",
+                caption: "Graph demonstrating stable run duration under 5 minutes for full regression.",
+            },
+            {
+                src: "/KAFKA/KAFKA - PND.PNG",
+                caption: "Graph demonstrating stable run duration under 5 minutes for full regression.",
+            },
+            {
+                src: "/KAFKA/KAFKA Log from Ingester Service.PNG",
+                caption: "Graph demonstrating stable run duration under 5 minutes for full regression.",
+            },
+        ]
+    },
+    {
+        title: "Swagger",
+        id: "swagger",
+        images: [
+            {
+                src: "/WEB INSPECTED/Inspect - 404 Not found.PNG",
+                caption: "Allure Report dashboard showing 98% pass rate across 200+ tests on CI/CD.",
+                link: "https://your-report-link.com/allure"
+            },
+        ]
+    }
+];
+
 // Define the unique content for the API Testing project
 const apiTestingData = {
     title: "API Testing: Postman & Backend Validation 🔗", 
@@ -12,6 +104,7 @@ const apiTestingData = {
     sectionContent: "The goal was to transition from manual regression testing to a fully automated CI/CD pipeline. I designed a page object model architecture, utilizing both Selenium with Java and Playwright with TypeScript to cover different client needs, focusing on high reliability and maintainability.",
     projectUrl: "https://github.com/your-repo-link/web-automation-project",
     imageUrl: "/me-at-DTEC.JPG",
+    visuals: apiAutomationVisuals,
 };
 ---
 

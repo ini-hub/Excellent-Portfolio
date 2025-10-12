@@ -3,6 +3,71 @@
 import Layout from '../components/Layout.astro';
 import PortfolioContent from '../components/PortfolioContent.astro';
 
+
+const mobileAutomationVisuals = [
+    {
+        title: "User Interface",
+        id: "user-interface",
+        images: [
+            {
+                src: "/WEB UI/WEB - Character limit on email.PNG",
+                caption: "File structure demonstrating clear separation of Page Objects, Tests, and Utilities.",
+            },
+            {
+                src: "/WEB UI/Web - Error message but Requirement fulfilled.PNG",
+                caption: "File structure demonstrating clear separation of Page Objects, Tests, and Utilities.",
+            },
+            {
+                src: "/WEB UI/WEB - Exception error on UI - 500 Internal server error.PNG",
+                caption: "File structure demonstrating clear separation of Page Objects, Tests, and Utilities.",
+            },
+            {
+                src: "/WEB UI/Web - Lack of space trimming - 400.PNG",
+                caption: "File structure demonstrating clear separation of Page Objects, Tests, and Utilities.",
+            },
+            {
+                src: "/WEB UI/Web - Password Validation Error but Requirement fulfilled.PNG",
+                caption: "File structure demonstrating clear separation of Page Objects, Tests, and Utilities.",
+            },
+            {
+                src: "/WEB UI/WEB - Request failed with status code 400 on UI.PNG",
+                caption: "File structure demonstrating clear separation of Page Objects, Tests, and Utilities.",
+            },
+            {
+                src: "/WEB UI/Web - UI Responsiveness.PNG",
+                caption: "File structure demonstrating clear separation of Page Objects, Tests, and Utilities.",
+            },
+        ]
+    },
+    {
+        title: "Web Inspected",
+        id: "inspected",
+        images: [
+            {
+                src: "/WEB INSPECTED/Inspect - 404 Not found.PNG",
+                caption: "Allure Report dashboard showing 98% pass rate across 200+ tests on CI/CD.",
+                link: "https://your-report-link.com/allure"
+            },
+            {
+                src: "/WEB INSPECTED/Inspect - 413 File too large.PNG",
+                caption: "Graph demonstrating stable run duration under 5 minutes for full regression.",
+            },
+            {
+                src: "/WEB INSPECTED/Inspect - 422 Error message.PNG",
+                caption: "Graph demonstrating stable run duration under 5 minutes for full regression.",
+            },
+            {
+                src: "/WEB INSPECTED/Inspect - Exception - Invalid Currency Code - NR.PNG",
+                caption: "Graph demonstrating stable run duration under 5 minutes for full regression.",
+            },
+            {
+                src: "/WEB INSPECTED/Inspect - Exception - Invalid Currency Code NR.PNG",
+                caption: "Graph demonstrating stable run duration under 5 minutes for full regression.",
+            }
+        ]
+    }
+];
+
 // Define the unique content for the Mobile Automation project
 const mobileAutomationData = {
     title: "Mobile Automation: Appium & Cross-Platform 📱", 
@@ -12,6 +77,7 @@ const mobileAutomationData = {
     projectUrl: "https://github.com/your-repo-link/web-automation-project",
     imageUrl: "/me-at-DTEC.JPG",
     techStack: ["Appium", "Cypress", "Java/Kotlin", "Swift/Xcode", "BrowserStack", "ADB", "XCUITest"],
+    visuals: mobileAutomationVisuals,
 };
 ---
 

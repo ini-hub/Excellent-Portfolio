@@ -1,7 +1,7 @@
 ---
 import ContactAction from './ContactAction.astro';
+import ProjectVisuals from './ProjectVisuals.astro'; // Import the new component
 
-// src/components/PortfolioContent.astro
 // Define the expected properties (props) for the component
 interface Props {
     title: string;
@@ -9,8 +9,20 @@ interface Props {
     sectionTitle: string;
     sectionContent: string;
     techStack: string[];
+    visuals: VisualClassification[]; 
     projectUrl?: string; 
     imageUrl?: string; 
+}
+
+// Define the structure for the visual data (same as in ProjectVisuals.astro)
+interface VisualClassification {
+    title: string;
+    id: string;
+    images: {
+        src: string;
+        caption: string;
+        link?: string;
+    }[];
 }
 
 const { 
@@ -20,21 +32,21 @@ const {
     sectionContent, 
     techStack,
     projectUrl,
-    imageUrl 
+    imageUrl,
+    visuals // Destructure the new prop
 } = Astro.props;
 
-// Define a consistent height for your images, e.g., 'h-80' (320px) or 'h-96' (384px)
-// You can make this configurable via props if you want different heights per project
-const imageHeightClass = "h-96"; // Choose your desired consistent height
+// Define a consistent height for your images, e.g., 'h-96' (384px)
+const imageHeightClass = "h-48"; 
 ---
 
-<div class="text-white"> {/* Removed max-w-7xl and mx-auto from here */}
+<div class="text-white">
     
-    <header class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 text-center">
+    <header class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8 text-center">
         <h1 class="text-3xl sm:text-5xl font-extrabold text-yellow-accent mb-4">
             {title}
         </h1>
-        <p class="text-lg text-gray-900 max-w-3xl mx-auto">
+        <p class="text-lg text-gray-800 max-w-3xl mx-auto">
             {introduction}
         </p>
     </header>
@@ -50,9 +62,10 @@ const imageHeightClass = "h-96"; // Choose your desired consistent height
         </section>
     )}
 
-    {/* Main content, now constrained by max-width */}
+    {/* Main content grid (Constrained) */}
     <section class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-3 gap-10">
         
+        {/* Left Column: Project Details & Tech Stack */}
         <div class="lg:col-span-1 bg-gray-800 p-6 rounded-lg shadow-xl h-fit">
             <h2 class="text-2xl font-bold mb-4 border-b border-gray-600 pb-2">
                 Project Details
@@ -83,14 +96,26 @@ const imageHeightClass = "h-96"; // Choose your desired consistent height
             </div>
         </div>
         
+        {/* Right Column: Detailed Description */}
         <div class="lg:col-span-2 space-y-6">
             <h2 class="text-3xl font-bold text-yellow-accent">
                 {sectionTitle}
             </h2>
-            <div class="text-gray-900 leading-relaxed space-y-4">
-                <p>{sectionContent}</p> 
+            <div class="text-gray-900 leading-relaxed space-y-4" set:html={sectionContent}>
             </div>
+            {/* NEW: VISUAL ARTIFACTS SECTION */}
+                {visuals.length > 0 && (
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <ProjectVisuals visuals={visuals} />
+                    </div>
+                )}
         </div>
-        <ContactAction/>
+        
     </section>
+
+    {/* CONTACT ACTION (Placed outside of the main content grid for full-width control) */}
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-20">
+        <ContactAction/>
+    </div>
+    
 </div>
