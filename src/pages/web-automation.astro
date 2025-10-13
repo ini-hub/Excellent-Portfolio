@@ -9,32 +9,24 @@ const webAutomationVisuals = [
         id: "user-interface",
         images: [
             {
-                src: "/WEB UI/WEB - Character limit on email.PNG",
-                caption: "File structure demonstrating clear separation of Page Objects, Tests, and Utilities.",
-            },
-            {
                 src: "/WEB UI/Web - Error message but Requirement fulfilled.PNG",
-                caption: "File structure demonstrating clear separation of Page Objects, Tests, and Utilities.",
+                caption: "Validation message was returned due to a misconfiguration although the requirement was met.",
             },
             {
                 src: "/WEB UI/WEB - Exception error on UI - 500 Internal server error.PNG",
-                caption: "File structure demonstrating clear separation of Page Objects, Tests, and Utilities.",
+                caption: "Unfriendly validation message was returned due to a server exception error.",
             },
             {
                 src: "/WEB UI/Web - Lack of space trimming - 400.PNG",
-                caption: "File structure demonstrating clear separation of Page Objects, Tests, and Utilities.",
-            },
-            {
-                src: "/WEB UI/Web - Password Validation Error but Requirement fulfilled.PNG",
-                caption: "File structure demonstrating clear separation of Page Objects, Tests, and Utilities.",
+                caption: "Lack of whitespace trimming preventing valid user credential from Login.",
             },
             {
                 src: "/WEB UI/WEB - Request failed with status code 400 on UI.PNG",
-                caption: "File structure demonstrating clear separation of Page Objects, Tests, and Utilities.",
+                caption: "Unfriendly validation message is displayed when invalid OTP is entered.",
             },
             {
                 src: "/WEB UI/Web - UI Responsiveness.PNG",
-                caption: "File structure demonstrating clear separation of Page Objects, Tests, and Utilities.",
+                caption: "Lack of responsiveness on Tablet screen display",
             },
         ]
     },
@@ -43,25 +35,25 @@ const webAutomationVisuals = [
         id: "inspected",
         images: [
             {
+                src: "/WEB UI/WEB - Character limit on email.PNG",
+                caption: "Character limit was observed on the email field which led to an issue while attempting to add a partner.",
+            },
+            {
                 src: "/WEB INSPECTED/Inspect - 404 Not found.PNG",
-                caption: "Allure Report dashboard showing 98% pass rate across 200+ tests on CI/CD.",
-                link: "https://your-report-link.com/allure"
+                caption: "Inexplicit validation message was returned when user attempted to get a value.",
+                link: ""
             },
             {
                 src: "/WEB INSPECTED/Inspect - 413 File too large.PNG",
-                caption: "Graph demonstrating stable run duration under 5 minutes for full regression.",
+                caption: "User is unable to add comment as attachment (file) added is deemed too large (1mb and above).",
             },
             {
                 src: "/WEB INSPECTED/Inspect - 422 Error message.PNG",
-                caption: "Graph demonstrating stable run duration under 5 minutes for full regression.",
+                caption: "User is unable to proceed with adding a new user profile due to conflicting data with existing records.",
             },
             {
                 src: "/WEB INSPECTED/Inspect - Exception - Invalid Currency Code - NR.PNG",
-                caption: "Graph demonstrating stable run duration under 5 minutes for full regression.",
-            },
-            {
-                src: "/WEB INSPECTED/Inspect - Exception - Invalid Currency Code NR.PNG",
-                caption: "Graph demonstrating stable run duration under 5 minutes for full regression.",
+                caption: "Dashboard content could not be displayed due to unhandled exception dealing with invalid data value, I.E Expected currency code NG.",
             }
         ]
     }
@@ -75,7 +67,7 @@ const webAutomationData = {
     sectionContent: "The goal was to transition from manual regression testing to a fully automated CI/CD pipeline. I designed a page object model architecture, utilizing both Selenium with Java and Playwright with TypeScript to cover different client needs, focusing on high reliability and maintainability.",
     techStack: ["Cypress", "Selenium", "Playwright", "Java", "TypeScript", "Maven", "GitHub Actions"],
     projectUrl: "https://github.com/your-repo-link/web-automation-project",
-    imageUrl: "/me-at-DTEC.JPG",
+    imageUrl: "/WEB UI/WEB - Request failed with status code 400 on UI.PNG",
     visuals: webAutomationVisuals,
 };
 ---

@@ -1,0 +1,82 @@
+---
+// src/components/ContactScreen.astro
+// Define your contact details here for single source of truth
+const CONTACT = {
+    email: "ebolujo101@gmail.com",
+    mobile_full: "+234 813 830 3956", 
+    mobile_raw: "2348138303956", 
+    linkedin_url: "https://www.linkedin.com/in/ebolujo", // REPLACE with your actual profile link
+};
+
+// Functions to create the action URLs
+// Explicitly typed as 'string', fixing the error
+const getMailtoLink = (email: string) => `mailto:${email}`;
+const getTelLink = (number: string) => `tel:${number.replace(/\s/g, '').replace('+', '')}`;
+const getWhatsAppLink = (number: string) => `https://wa.me/${number}`;
+---
+
+<div class="max-w-4xl mx-auto">
+    
+    <header class="text-center mb-6">
+        <h1 class="text-4xl sm:text-5xl font-extrabold mb-6 text-yellow-accent">
+            Let's Connect
+        </h1>
+        <p class="text-lg text-gray-400">
+            I'm always open to discussing new projects, collaboration opportunities, or technical challenges.
+        </p>
+    </header>
+
+    {/* --- CONTACT GRID --- */}
+    <div class="grid grid-cols-1 md:grid-cols-2 mt-8 gap-8">
+        
+        {/* 1. EMAIL */}
+        <a href={getMailtoLink(CONTACT.email)} class="contact-card group border-gray-700 hover:border-yellow-accent">
+            <span class="text-4xl text-yellow-accent mb-3">📧</span>
+            <h2 class="text-xl font-bold group-hover:text-yellow-accent transition">Email Address</h2>
+            <p class="text-gray-300 break-words">{CONTACT.email}</p>
+            <span class="text-sm text-yellow-accent mt-2 block">Click to compose email</span>
+        </a>
+
+        {/* 2. LINKEDIN */}
+        <a href={CONTACT.linkedin_url} target="_blank" rel="noopener noreferrer" class="contact-card group border-gray-700 hover:border-yellow-accent">
+            <span class="text-4xl text-yellow-accent mb-3">🔗</span>
+            <h2 class="text-xl font-bold group-hover:text-blue-400 transition">LinkedIn Profile</h2>
+            <p class="text-gray-300">View My Professional Profile</p>
+            <span class="text-sm text-yellow-accent mt-2 block">Click to view profile</span>
+        </a>
+
+        {/* 3. MOBILE: CALL */}
+        <a href={getTelLink(CONTACT.mobile_raw)} class="contact-card group border-gray-700 hover:border-yellow-accent">
+            <span class="text-4xl text-yellow-accent mb-3">📞</span>
+            <h2 class="text-xl font-bold group-hover:text-yellow-accent transition">Mobile (Direct Call)</h2>
+            <p class="text-gray-300">{CONTACT.mobile_full}</p>
+            <span class="text-sm text-yellow-accent mt-2 block">Click to call now</span>
+        </a>
+
+        {/* 4. MOBILE: WHATSAPP */}
+        <a href={getWhatsAppLink(CONTACT.mobile_raw)} target="_blank" rel="noopener noreferrer" class="contact-card group border-gray-700 hover:border-yellow-accent">
+            <span class="text-4xl text-yellow-accent mb-3">💬</span>
+            <h2 class="text-xl font-bold group-hover:text-green-500 transition">Mobile (WhatsApp)</h2>
+            <p class="text-gray-300">{CONTACT.mobile_full}</p>
+            <span class="text-sm text-yellow-accent mt-2 block">Click to chat on WhatsApp</span>
+        </a>
+
+    </div>
+
+</div>
+
+{/* --- Tailwind Card Styling (Copied from previous response) --- */}
+<style>
+    .contact-card {
+        @apply flex flex-col p-6 rounded-xl transition-all duration-300 cursor-pointer;
+        @apply border hover:shadow-2xl;
+    }
+    
+    .contact-card.hover\\:border-yellow-accent:hover {
+        @apply shadow-yellow-accent/10;
+    }
+
+    .contact-card.hover\\:border-green-500:hover {
+        @apply shadow-green-500/20;
+    }
+</style>

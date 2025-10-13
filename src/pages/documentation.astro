@@ -1,82 +1,27 @@
 ---
 // src/pages/documentation.astro
+import { Image } from 'astro:assets';
 import Layout from '../components/Layout.astro';
 import PortfolioContent from '../components/PortfolioContent.astro';
 
 
 const documentationVisuals = [
     {
-        title: "JIRA + Qmetry",
+        title: "Qmetry (JIRA) + Excel Sheet",
         id: "jira",
         images: [
             {
-                src: "/WEB UI/WEB - Character limit on email.PNG",
-                caption: "File structure demonstrating clear separation of Page Objects, Tests, and Utilities.",
+                src: "/QMETRY SCREEN.png",
+                caption: "Qmetry-Based Compliance tool Test Report.",
+                link:"/QMETRY TC Document.pdf"
             },
             {
-                src: "/WEB UI/Web - Error message but Requirement fulfilled.PNG",
-                caption: "File structure demonstrating clear separation of Page Objects, Tests, and Utilities.",
-            },
-            {
-                src: "/WEB UI/WEB - Exception error on UI - 500 Internal server error.PNG",
-                caption: "File structure demonstrating clear separation of Page Objects, Tests, and Utilities.",
-            },
-            {
-                src: "/WEB UI/Web - Lack of space trimming - 400.PNG",
-                caption: "File structure demonstrating clear separation of Page Objects, Tests, and Utilities.",
-            },
-            {
-                src: "/WEB UI/Web - Password Validation Error but Requirement fulfilled.PNG",
-                caption: "File structure demonstrating clear separation of Page Objects, Tests, and Utilities.",
-            },
-            {
-                src: "/WEB UI/WEB - Request failed with status code 400 on UI.PNG",
-                caption: "File structure demonstrating clear separation of Page Objects, Tests, and Utilities.",
-            },
-            {
-                src: "/WEB UI/Web - UI Responsiveness.PNG",
-                caption: "File structure demonstrating clear separation of Page Objects, Tests, and Utilities.",
+                src: "/Excel Screen.png",
+                caption: "Sheet-Based Test Design Document for a Ride-Hailing application.",
+                link: "https://docs.google.com/spreadsheets/d/1p3vION9C6Gq_vdGtngQHvdjXbSSnJLbkXO-zSPupizU/edit?usp=sharing"
             },
         ]
     },
-    {
-        title: "Azure",
-        id: "azure",
-        images: [
-            {
-                src: "/WEB INSPECTED/Inspect - 404 Not found.PNG",
-                caption: "Allure Report dashboard showing 98% pass rate across 200+ tests on CI/CD.",
-                link: "https://your-report-link.com/allure"
-            },
-            {
-                src: "/WEB INSPECTED/Inspect - 413 File too large.PNG",
-                caption: "Graph demonstrating stable run duration under 5 minutes for full regression.",
-            },
-            {
-                src: "/WEB INSPECTED/Inspect - 422 Error message.PNG",
-                caption: "Graph demonstrating stable run duration under 5 minutes for full regression.",
-            },
-            {
-                src: "/WEB INSPECTED/Inspect - Exception - Invalid Currency Code - NR.PNG",
-                caption: "Graph demonstrating stable run duration under 5 minutes for full regression.",
-            },
-            {
-                src: "/WEB INSPECTED/Inspect - Exception - Invalid Currency Code NR.PNG",
-                caption: "Graph demonstrating stable run duration under 5 minutes for full regression.",
-            }
-        ]
-    },
-    {
-        title: "Excel | Sheet",
-        id: "sheet",
-        images: [
-            {
-                src: "/WEB INSPECTED/Inspect - 404 Not found.PNG",
-                caption: "Allure Report dashboard showing 98% pass rate across 200+ tests on CI/CD.",
-                link: "https://your-report-link.com/allure"
-            },
-        ]
-    }
 ];
 
 // Define the unique content for the Documentation & Process project
@@ -85,7 +30,7 @@ const documentationData = {
     introduction: "This section provides insight into my structured approach to Test Design, Risk Analysis, and BDD principles to ensure transparency and align technical work with business requirements.",
     sectionTitle: "Key Process Artifacts",
     techStack: ["BDD", "Gherkin", "JIRA/Azure DevOps", "TestQuality", "ISTQB Standards", "Risk Management"],
-    imageUrl: "/me-at-DTEC.JPG",
+    imageUrl: "/QMETRY SCREEN.png",
     sectionContent: "The goal was to transition from manual regression testing to a fully automated CI/CD pipeline. I designed a page object model architecture, utilizing both Selenium with Java and Playwright with TypeScript to cover different client needs, focusing on high reliability and maintainability.",
     projectUrl: "https://github.com/your-repo-link/web-automation-project",
     visuals: documentationVisuals,

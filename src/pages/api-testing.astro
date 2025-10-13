@@ -10,12 +10,16 @@ const apiAutomationVisuals = [
         id: "postman",
         images: [
             {
+                src: "/WEB UI/Web - Password Validation Error but Requirement fulfilled.PNG",
+                caption: "Error message displays -Passwords do not match- even though the requirement was met.",
+            },
+            {
                 src: "/POSTMAN/Postman - 405 - Method Not Allowed.PNG",
-                caption: "File structure demonstrating clear separation of Page Objects, Tests, and Utilities.",
+                caption: "Unable to perform update method. Method Not Allowed.",
             },
             {
                 src: "/POSTMAN/Postman - Cannot Signup - 400 Bad request.PNG",
-                caption: "File structure demonstrating clear separation of Page Objects, Tests, and Utilities.",
+                caption: "Validating that requirement must be met File structure demonstrating clear separation of Page Objects, Tests, and Utilities.",
             },
             {
                 src: "/POSTMAN/Postman - Post Response Script.PNG",
@@ -64,21 +68,16 @@ const apiAutomationVisuals = [
         id: "kafka",
         images: [
             {
-                src: "/KAFKA/KAFKA - BVN 1.PNG",
-                caption: "Allure Report dashboard showing 98% pass rate across 200+ tests on CI/CD.",
-                link: ""
-            },
-            {
                 src: "/KAFKA/KAFKA - BVN.PNG",
-                caption: "Graph demonstrating stable run duration under 5 minutes for full regression.",
+                caption: "Validating KAFKA Message delivery inline with resolution action to be carried out post webhook delivery.",
             },
             {
                 src: "/KAFKA/KAFKA - PND.PNG",
-                caption: "Graph demonstrating stable run duration under 5 minutes for full regression.",
+                caption: "Validating KAFKA Message delivery inline with resolution action to be carried out post webhook delivery.",
             },
             {
                 src: "/KAFKA/KAFKA Log from Ingester Service.PNG",
-                caption: "Graph demonstrating stable run duration under 5 minutes for full regression.",
+                caption: "KAFKA Log review to identify bug root cause.",
             },
         ]
     },
@@ -87,9 +86,40 @@ const apiAutomationVisuals = [
         id: "swagger",
         images: [
             {
-                src: "/WEB INSPECTED/Inspect - 404 Not found.PNG",
-                caption: "Allure Report dashboard showing 98% pass rate across 200+ tests on CI/CD.",
-                link: "https://your-report-link.com/allure"
+                src: "/SWAGGER/Swagger - Blank Invalid Transaction PIN.png",
+                caption: "Verifying reset PIN to 4 whitespace character.",
+            },
+            {
+                src: "/SWAGGER/Swagger - Error handling.png",
+                caption: "Attempting Profile Picture update with no file.",
+            },
+            {
+                src: "/SWAGGER/Swagger - Modal cannot be null.png",
+                caption: "Editing user profile with Null modal.",
+            },
+            {
+                src: "/SWAGGER/Swagger - Successful get.png",
+                caption: "Validating recruiters can get Top applicants.",
+            },
+            {
+                src: "/SWAGGER/Swagger - Accept invalid PIN.png",
+                caption: "Successful PIN Reset.",
+            },
+            {
+                src: "/SWAGGER/Swagger - PIN Should not be empty.png",
+                caption: "Attempting to create profile with Empty PIN.",
+            },            
+            {
+                src: "/SWAGGER/Swagger - Unhandled exception.png",
+                caption: "Unhandled exception leading to Bad Request",
+            },
+            {
+                src: "/SWAGGER/Swagger - Username Search.png",
+                caption: "Successful Username Search.",
+            },
+            {
+                src: "/SWAGGER/Swagger - Reset PIN Successful.png",
+                caption: "Successful PIN Reset",
             },
         ]
     }
@@ -103,7 +133,7 @@ const apiTestingData = {
     techStack: ["Postman", "Newman", "RestAssured", "Swagger/OpenAPI", "Spanner", "MySQL", "Kafka"],
     sectionContent: "The goal was to transition from manual regression testing to a fully automated CI/CD pipeline. I designed a page object model architecture, utilizing both Selenium with Java and Playwright with TypeScript to cover different client needs, focusing on high reliability and maintainability.",
     projectUrl: "https://github.com/your-repo-link/web-automation-project",
-    imageUrl: "/me-at-DTEC.JPG",
+    imageUrl: "/SWAGGER/Swagger - Modal cannot be null.png",
     visuals: apiAutomationVisuals,
 };
 ---

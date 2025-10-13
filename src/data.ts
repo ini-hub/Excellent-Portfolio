@@ -46,7 +46,7 @@ export const portfolioLinks: PortfolioLink[] = [
     { href: "/mobile-automation", title: "Mobile Automation (Appium, Frameworks)", description: "Showcase: Mobile App Automation Framework/Scripts, Cross-Platform Testing Artifacts." },
     { href: "/api-testing", title: "API Testing (Postman, Backend)", description: "Showcase: Postman Script Runs, Collection Links, Backend Validation Scripts." },
     { href: "/performance-testing", title: "Performance Testing (JMeter)", description: "Showcase: JMeter Automation Scripts, Performance Results/Reports, Load Testing Scenarios." },
-    { href: "/documentation", title: "Documentation & Process", description: "Showcase: Linked Test Cases, Test Reports (e.g., Cucumber/Allure), Test Design Documents." },
+    { href: "/documentation", title: "Documentation & Process", description: "Showcase: Linked Test Cases, Test Reports (e.g., Qmetry/TestQuality/Excel), Test Design Documents." },
 ];
 
 // --- CASE STUDIES ---
@@ -57,7 +57,7 @@ export const caseStudies: CaseStudy[] = [
         company: "Walk Mobility",
         description: "Built a revolutionary device called “White Bot” designed to help visually impaired individuals navigate the world around them with ease and confidence.",
         focus: "Object Detection, Advocating Against Stigmatization, Innovate Mobility.",
-        companyUrl: "https://resumii.netlify.app/",
+        companyUrl: "https://walkit.excellentbolujo.com/",
     },
     {
         title: "AI Model QA Engineer",
@@ -65,6 +65,13 @@ export const caseStudies: CaseStudy[] = [
         description: "Conducted rigorous testing of AI models for customer onboarding and transaction screening, ensuring alignment with sanction lists and PEP (Politically Exposed Persons). Validated model performance by analysing key metrics such as Precision, Recall and F1 Score.",
         focus: "Regulatory Compliance, Model Performance Validation, End-to-End Web & Mobile Testing.",
         companyUrl: "https://moniepoint.com/ng/business",
+    },
+    {
+        title: "Founder",
+        company: "Arewa Studio",
+        description: "The AREWA STUDIO® is on a mission is to empower beauty, confidence, and faith across Africa through physical retail/service arm and technology — the chain of salons and lifestyle studios accessible nationwide.",
+        focus: "Providing comfort while servicing beauty, Human & Technology Inclusive.",
+        companyUrl: "https://ArewaStudio.excellentbolujo.com/",
     },
     {
         title: "Quality Assurance Engineering Lead",
