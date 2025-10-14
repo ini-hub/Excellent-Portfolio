@@ -10,7 +10,7 @@ interface Props {
     sectionContent: string;
     techStack: string[];
     visuals: VisualClassification[]; 
-    projectUrl?: string; 
+    projectUrl?: { name?: string; url: string }[]; // Updated type
     imageUrl?: string; 
 }
 
@@ -75,14 +75,29 @@ const imageHeightClass = "h-48";
                 <span class="font-semibold text-yellow-accent">Status:</span> Completed
             </p>
 
-            {projectUrl && (
-                <p class="mb-6">
-                    <span class="font-semibold text-yellow-accent">Live Demo/Repo:</span> 
-                    <a href={projectUrl} target="_blank" class="block text-blue-400 hover:text-blue-300 transition duration-150 underline">
-                        {projectUrl}
-                    </a>
-                </p>
-            )}
+            {projectUrl && projectUrl.length > 0 && (
+            <div class="mb-6">
+                <span class="font-semibold text-yellow-accent block mb-2">Project Links:</span>
+                <div class="flex flex-col space-y-2">
+                    {projectUrl.map((link) => (
+                        // 🚨 HERE IS THE NEW LOGIC 🚨
+                        <div class="flex items-center">
+                            {link.url ? ( // Check if a URL exists
+                                <a 
+                                    href={link.url} 
+                                    target="_blank" 
+                                    class="text-blue-400 hover:text-blue-300 transition duration-150 underline break-all"
+                                >
+                                    {link.name || link.url}
+                                </a>
+                            ) : ( // If no URL, just display the name as plain text
+                                <span class="text-gray-400 break-all">{link.name}</span>
+                            )}
+                        </div>
+                    ))}
+                </div>
+            </div>
+        )}
 
             <h3 class="text-xl font-bold mb-3 text-yellow-accent">
                 Tech Stack

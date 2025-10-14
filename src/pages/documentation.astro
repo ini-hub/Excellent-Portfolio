@@ -22,17 +22,49 @@ const documentationVisuals = [
             },
         ]
     },
+    {
+        title: "Release Notes",
+        id: "release",
+        images: [
+            {
+                src: "/RELEASE/Release 1.30.png",
+                caption: "Featured Release note (1.30.0) and (2.29.0) - June 2025",
+                link:"/RELEASE/MAE-v1.30.0 and v2.29.0-141025-084158.pdf"
+            },
+            {
+                src: "/RELEASE/Release 1.31.png",
+                caption: "Featured Release note (1.31.0) and (2.30.0) - July 2025",
+                link:"/RELEASE/MAE-v1.31.0 and v2.30.0-141025-082800.pdf"
+            },
+            {
+                src: "/RELEASE/Release 1.35.png",
+                caption: "Featured Release note (1.35.0) and (2.34.0) - August 2025",
+                link:"/RELEASE/MAE-v1.35.0 and v2.34.0-141025-082626.pdf"
+            },
+            {
+                src: "/RELEASE/Release 1.41.png",
+                caption: "Featured Release note (1.41.0) and (2.40.0) - September 2025",
+                link: "/RELEASE/MAE-v1.41.0 and v2.40.0-141025-082159.pdf"
+            },
+        ]
+    },
 ];
 
 // Define the unique content for the Documentation & Process project
 const documentationData = {
-    title: "Documentation & Process Standards 📝", 
+    title: "Documentations & Reports 📝", 
     introduction: "This section provides insight into my structured approach to Test Design, Risk Analysis, and BDD principles to ensure transparency and align technical work with business requirements.",
     sectionTitle: "Key Process Artifacts",
     techStack: ["BDD", "Gherkin", "JIRA/Azure DevOps", "TestQuality", "ISTQB Standards", "Risk Management"],
     imageUrl: "/QMETRY SCREEN.png",
     sectionContent: "The goal was to transition from manual regression testing to a fully automated CI/CD pipeline. I designed a page object model architecture, utilizing both Selenium with Java and Playwright with TypeScript to cover different client needs, focusing on high reliability and maintainability.",
-    projectUrl: "https://github.com/your-repo-link/web-automation-project",
+    projectUrl: [
+        { name: "Ride-Hailing", url:""},
+        { name: "Loom Transaction Monitoring", url: "" },
+        { name: "Loom Transaction Monitoring", url: "" },
+        { name: "Rezumii", url: "https://your-demo-link.com" },
+        { name: "Walure Erp Repository", url: "https://github.com/your-repo-link/web-automation-project" },
+    ],    
     visuals: documentationVisuals,
 };
 ---

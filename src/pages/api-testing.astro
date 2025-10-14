@@ -6,64 +6,6 @@ import PortfolioContent from '../components/PortfolioContent.astro';
 
 const apiAutomationVisuals = [
     {
-        title: "Postman",
-        id: "postman",
-        images: [
-            {
-                src: "/WEB UI/Web - Password Validation Error but Requirement fulfilled.PNG",
-                caption: "Error message displays -Passwords do not match- even though the requirement was met.",
-            },
-            {
-                src: "/POSTMAN/Postman - 405 - Method Not Allowed.PNG",
-                caption: "Unable to perform update method. Method Not Allowed.",
-            },
-            {
-                src: "/POSTMAN/Postman - Cannot Signup - 400 Bad request.PNG",
-                caption: "Validating that requirement must be met File structure demonstrating clear separation of Page Objects, Tests, and Utilities.",
-            },
-            {
-                src: "/POSTMAN/Postman - Post Response Script.PNG",
-                caption: "File structure demonstrating clear separation of Page Objects, Tests, and Utilities.",
-            },
-            {
-                src: "/POSTMAN/Postman - Remove Moniepoint - 404 - Not found Get Invalid.PNG",
-                caption: "File structure demonstrating clear separation of Page Objects, Tests, and Utilities.",
-            },
-            {
-                src: "/POSTMAN/Postman - Remove Moniepoint - 500 - Internal Server Error Delete invalid.PNG",
-                caption: "File structure demonstrating clear separation of Page Objects, Tests, and Utilities.",
-            },
-            {
-                src: "/POSTMAN/Postman - Remove Monnify - 400 - Bad request Algorithm Required.PNG",
-                caption: "File structure demonstrating clear separation of Page Objects, Tests, and Utilities.",
-            },
-            {
-                src: "/POSTMAN/Postman - Remove Monnify - 400 - Bad request Provider Required.PNG",
-                caption: "File structure demonstrating clear separation of Page Objects, Tests, and Utilities.",
-            },
-            {
-                src: "/POSTMAN/Postman - Remove Monnify - 400 - Bad request Threshold Required.PNG",
-                caption: "File structure demonstrating clear separation of Page Objects, Tests, and Utilities.",
-            },
-            {
-                src: "/POSTMAN/Postman - Remove Monnify - 400 - Bad request Threshold<=1.0.PNG",
-                caption: "File structure demonstrating clear separation of Page Objects, Tests, and Utilities.",
-            },
-            {
-                src: "/POSTMAN/Postman - Remove Monnify - 400 - Bad request Threshold>0.0.PNG",
-                caption: "File structure demonstrating clear separation of Page Objects, Tests, and Utilities.",
-            },
-            {
-                src: "/POSTMAN/Postman - Screening Reserved Name.PNG",
-                caption: "File structure demonstrating clear separation of Page Objects, Tests, and Utilities.",
-            },
-            {
-                src: "/POSTMAN/Postman - Webhook processing failed - 500 Internal Server Error.PNG",
-                caption: "File structure demonstrating clear separation of Page Objects, Tests, and Utilities.",
-            },
-        ]
-    },
-    {
         title: "Kafka",
         id: "kafka",
         images: [
@@ -78,6 +20,52 @@ const apiAutomationVisuals = [
             {
                 src: "/KAFKA/KAFKA Log from Ingester Service.PNG",
                 caption: "KAFKA Log review to identify bug root cause.",
+            },
+        ]
+    },
+    {
+        title: "Postman",
+        id: "postman",
+        images: [
+            {
+                src: "/WEB UI/Web - Password Validation Error but Requirement fulfilled.PNG",
+                caption: "Error message displays (: Passwords do not match :) even though the requirement was met.",
+            },
+            {
+                src: "/POSTMAN/Postman - 405 - Method Not Allowed.PNG",
+                caption: "Unable to perform update method. (Method Not Allowed)",
+            },
+            {
+                src: "/POSTMAN/Postman - Cannot Signup - 400 Bad request.PNG",
+                caption: "Validating that onboarding requirement must be met (: Password Complexity Check :)",
+            },
+            {
+                src: "/POSTMAN/Postman - Post Response Script.PNG",
+                caption: "Adopting OOP - Created Postman Script to set AccessToken and RefreshToken for easy reuse while testing.",
+            },
+            {
+                src: "/POSTMAN/Postman - Remove Moniepoint - 500 - Internal Server Error Delete invalid.PNG",
+                caption: "Cache Synchronization Failed leading to invalidate Delete Function",
+            },
+            {
+                src: "/POSTMAN/Postman - Remove Monnify - 400 - Bad request Algorithm Required.PNG",
+                caption: "Validating bad request error message response (Required, Cannot be blank or empty)",
+            },
+            {
+                src: "/POSTMAN/Postman - Remove Monnify - 400 - Bad request Threshold<=1.0.PNG",
+                caption: "Validating threshold (Boundary) by sending above expected limit (ScreeningThreshold must be <=1.0)",
+            },
+            /*{
+                src: "/POSTMAN/Postman - Remove Monnify - 400 - Bad request Threshold>0.0.PNG",
+                caption: "Validating threshold (Boundary) by sending below expected limit (ScreeningThreshold must be > 0.0)",
+            },*/
+            {
+                src: "/POSTMAN/Postman - Screening Reserved Name.PNG",
+                caption: "Screening Reserved Name",
+            },
+            {
+                src: "/POSTMAN/Postman - Webhook processing failed - 500 Internal Server Error.PNG",
+                caption: "Webhook processing failed: Reference not found.",
             },
         ]
     },
@@ -127,13 +115,15 @@ const apiAutomationVisuals = [
 
 // Define the unique content for the API Testing project
 const apiTestingData = {
-    title: "API Testing: Postman & Backend Validation 🔗", 
+    title: "🔗 API Testing: Postman | Kafka | Swagger", 
     introduction: "This section details robust API testing strategies, focusing on validation of business logic, data integrity, security, and integration points (e.g., Kafka/Spanner/MySQL).",
     sectionTitle: "Key Artifacts and Deliverables",
     techStack: ["Postman", "Newman", "RestAssured", "Swagger/OpenAPI", "Spanner", "MySQL", "Kafka"],
     sectionContent: "The goal was to transition from manual regression testing to a fully automated CI/CD pipeline. I designed a page object model architecture, utilizing both Selenium with Java and Playwright with TypeScript to cover different client needs, focusing on high reliability and maintainability.",
-    projectUrl: "https://github.com/your-repo-link/web-automation-project",
-    imageUrl: "/SWAGGER/Swagger - Modal cannot be null.png",
+    projectUrl: [
+        { name: "Rezumii", url: "https://resumii.netlify.app/" },
+        { name: "Walure Erp Repository", url: "https://walure-erp.netlify.app" },
+    ],    imageUrl: "/SWAGGER/Swagger - Modal cannot be null.png",
     visuals: apiAutomationVisuals,
 };
 ---
