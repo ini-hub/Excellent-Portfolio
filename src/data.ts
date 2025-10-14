@@ -43,10 +43,10 @@ export const nonFunctionalSkills: string[] = [
 
 export const portfolioLinks: PortfolioLink[] = [
     { href: "/web-automation", title: "Web Automation (Cypress, GitHub)", description: "Showcase: GitHub Link, Cypress Script Examples, CI/CD Integration Artifacts." },
-    { href: "/mobile-automation", title: "Mobile Automation (Appium, Frameworks)", description: "Showcase: Mobile App Automation Framework/Scripts, Cross-Platform Testing Artifacts." },
-    { href: "/api-testing", title: "API Testing (Postman, Backend)", description: "Showcase: Postman Script Runs, Collection Links, Backend Validation Scripts." },
-    { href: "/performance-testing", title: "Performance Testing (JMeter)", description: "Showcase: JMeter Automation Scripts, Performance Results/Reports, Load Testing Scenarios." },
-    { href: "/documentation", title: "Documentation & Process", description: "Showcase: Linked Test Cases, Test Reports (e.g., Qmetry/TestQuality/Excel), Test Design Documents." },
+    { href: "/mobile-automation", title: "Mobile Testing (Appium, Frameworks)", description: "Showcase: Mobile App Automation Framework/Scripts, Cross-Platform Testing Artifacts." },
+    { href: "/api-testing", title: "API Testing (Postman, KAFKA)", description: "Showcase: Postman Script Runs, Collection Links, Backend Validation Scripts." },
+    { href: "/performance-testing", title: "Non-Functional Testing (Performance + Security)", description: "Showcase: JMeter Automation Scripts, Performance Results/Reports, Load Testing Scenarios." },
+    { href: "/documentation", title: "Documentation & Process", description: "Showcase: Linked Test Cases, Test Reports (e.g., Qmetry/TestQuality/Excel), Test Design Documents, Release Notes." },
 ];
 
 // --- CASE STUDIES ---
