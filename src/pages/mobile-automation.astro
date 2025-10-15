@@ -6,83 +6,60 @@ import PortfolioContent from '../components/PortfolioContent.astro';
 
 const mobileAutomationVisuals = [
     {
-        title: "User Interface",
-        id: "user-interface",
+        title: "Interesting Mobile Defects",
+        id: "mobile-defects",
         images: [
             {
-                src: "/WEB UI/WEB - Character limit on email.PNG",
-                caption: "File structure demonstrating clear separation of Page Objects, Tests, and Utilities.",
+                src: "/MOBILE/Amount must be positive post Withdrawal screen .jpeg",
+                caption: "User getting Amount must be positive post withdrawal amount screen.",
             },
             {
-                src: "/WEB UI/Web - Error message but Requirement fulfilled.PNG",
-                caption: "File structure demonstrating clear separation of Page Objects, Tests, and Utilities.",
+                src: "/MOBILE/Service stability.jpeg",
+                caption: "Connection to chat lost.",
             },
             {
-                src: "/WEB UI/WEB - Exception error on UI - 500 Internal server error.PNG",
-                caption: "File structure demonstrating clear separation of Page Objects, Tests, and Utilities.",
+                src: "/MOBILE/SMILE ID integration test.jpeg",
+                caption: "Testing Biometic verification via Smile ID.",
             },
             {
-                src: "/WEB UI/Web - Lack of space trimming - 400.PNG",
-                caption: "File structure demonstrating clear separation of Page Objects, Tests, and Utilities.",
+                src: "/MOBILE/Trip details with invalid amount .jpeg",
+                caption: "Validated that trip details returned discrepant total amount.",
             },
             {
-                src: "/WEB UI/Web - Password Validation Error but Requirement fulfilled.PNG",
-                caption: "File structure demonstrating clear separation of Page Objects, Tests, and Utilities.",
+                src: "/MOBILE/Unable to fetch banks.jpeg",
+                caption: "Verified that application is unable to fetch bank list preventing transaction initiation.",
             },
             {
-                src: "/WEB UI/WEB - Request failed with status code 400 on UI.PNG",
-                caption: "File structure demonstrating clear separation of Page Objects, Tests, and Utilities.",
+                src: "/MOBILE/Unfriendly error message when invalid account details copy.jpeg",
+                caption: "Validated that unfriendly toast message is returned when invalid account details is entered.",
             },
             {
-                src: "/WEB UI/Web - UI Responsiveness.PNG",
-                caption: "File structure demonstrating clear separation of Page Objects, Tests, and Utilities.",
+                src: "/MOBILE/User not found error displayed post onboarding.jpeg",
+                caption: "System is unable to reconcile user detail during account verification.",
+            },
+            {
+                src: "/MOBILE/Webhook failure .jpeg",
+                caption: "Webhook failure preventing users from authorizing trips.",
             },
         ]
     },
-    {
-        title: "Web Inspected",
-        id: "inspected",
-        images: [
-            {
-                src: "/WEB INSPECTED/Inspect - 404 Not found.PNG",
-                caption: "Allure Report dashboard showing 98% pass rate across 200+ tests on CI/CD.",
-                link: "https://your-report-link.com/allure"
-            },
-            {
-                src: "/WEB INSPECTED/Inspect - 413 File too large.PNG",
-                caption: "Graph demonstrating stable run duration under 5 minutes for full regression.",
-            },
-            {
-                src: "/WEB INSPECTED/Inspect - 422 Error message.PNG",
-                caption: "Graph demonstrating stable run duration under 5 minutes for full regression.",
-            },
-            {
-                src: "/WEB INSPECTED/Inspect - Exception - Invalid Currency Code - NR.PNG",
-                caption: "Graph demonstrating stable run duration under 5 minutes for full regression.",
-            },
-            {
-                src: "/WEB INSPECTED/Inspect - Exception - Invalid Currency Code NR.PNG",
-                caption: "Graph demonstrating stable run duration under 5 minutes for full regression.",
-            }
-        ]
-    }
-];
+]
 
 // Define the unique content for the Mobile Automation project
 const mobileAutomationData = {
     title: "Mobile Testing: Appium & Cross-Platform 📱", 
-    introduction: "This section demonstrates expertise in developing robust, cross-platform mobile automation frameworks for both iOS and Android applications, ensuring seamless user experiences.",
+    introduction: "This portfolio section demonstrates expertise in developing robust, cross-platform mobile automation frameworks for both iOS and Android applications. It showcases a proven ability to identify critical defects, from biometric verification failures and service stability issues to backend reconciliation problems and UI display errors, ensuring a seamless user experience.",
     sectionTitle: "Key Artifacts and Deliverables",
-    sectionContent: "The goal was to transition from manual regression testing to a fully automated CI/CD pipeline. I designed a page object model architecture, utilizing both Selenium with Java and Playwright with TypeScript to cover different client needs, focusing on high reliability and maintainability.",
+    sectionContent: "The goal was to transition from manual regression testing to a fully automated CI/CD pipeline. I designed and implemented a page object model architecture, utilizing a cross-platform approach with Appium. This work included validating biometric verification with Smile ID, testing for backend data integrity on trip details, and verifying that crucial functions like bank list fetching and webhook authorizations were robust and reliable. The focus was on high reliability, maintainability, and providing clear, actionable defect reports.",
     projectUrl: [
         { name: "Simpliride Hailing", url: "https://github.com/Simpliride/simpliride-business" },
         { name: "Simplaa Rider + Driver app", url: "https://www.simplaa.com/nigeria" },
         { name: "Moniepoint Business app", url: "" },
         { name: "Moniepoint Personal app", url: "" },
     ],     
-    imageUrl: "/me-at-DTEC.JPG",
+    imageUrl: "/MOBILE/Unfriendly error message when invalid account details.jpeg",
     techStack: ["Appium", "Cypress", "Java/Kotlin", "Swift/Xcode", "BrowserStack", "ADB", "XCUITest"],
-    visuals: ""//mobileAutomationVisuals,
+    visuals: mobileAutomationVisuals,
 };
 ---
 
